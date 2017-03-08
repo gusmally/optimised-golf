@@ -42,7 +42,7 @@ The card values are as follows:
 	
 	K: 0, additionally, kings have the power to cancel out one of the player's other cards
 	
-	Additionally, pairs of cards cancel each other out (but not triples)
+Additionally, pairs of cards cancel each other out (but not triples)
 	
 Each player's score for the game is calculated by taking the sum of the score of each hole.
 
