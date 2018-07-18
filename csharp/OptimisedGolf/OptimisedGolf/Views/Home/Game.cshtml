@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "New game";
+}
+@model Game
+<h1>@ViewData["Title"]</h1>
+<p>This is a new game with @Model.NumberOfPlayers players and @Model.FullGame</p>
+<h2>Players</h2>
+@foreach (Player player in Model.Players)
+{
+    <div>
+        @player.Name
+        <div>
+                @foreach (Card card in player.Hand)
+                {
+                    <div>
+                        @card.PrettyPrintWithState()
+                    </div>
+                }
+            </div>
+        <hr />
+    </div>
+}
+
+
+@*<form asp-action="StartNewHole" asp-controller="Hole">
+        <p>
+            <label asp-for="Par"></label>
+            <input type="number" id="Par" name="Par" value="" placeholder="par for this hole" />
+        </p>
+        <input type="submit" name="start new hole" />
+    </form>*@

@@ -17,9 +17,7 @@
     <Content Remove="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Views\Home\NewRoundPlayer.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Models\Rank.cs" />
+    <Compile Remove="Controllers\GameIPlay.cs" />
   </ItemGroup>
 </Project>

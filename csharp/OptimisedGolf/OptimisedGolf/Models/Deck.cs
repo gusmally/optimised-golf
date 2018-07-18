@@ -8,6 +8,20 @@ namespace OptimisedGolf.Models
     {
         private List<Card> cards;
 
+        /// <summary>
+        /// Needs to be checked before calling DealOne
+        /// TODO: it'd be nice to embed this in the DealOne call somehow, so it doesn't have to be manually checked.
+        /// Maybe an event for when the cards run out that the main class listens to an shuffles the discard pile?
+        /// </summary>
+        /// <value><c>true</c> if has next; otherwise, <c>false</c>.</value>
+        public bool HasNext
+        {
+            get
+            {
+                return this.cards.Any();
+            }
+        }
+
         public Deck()
         {
             //for (int i = 1; i < 14; i++)
@@ -41,16 +55,16 @@ namespace OptimisedGolf.Models
             }
         }
 
+        public void AddCards(IEnumerable<Card> cards)
+        {
+            this.cards.AddRange(cards);
+        }
+
         public Card DealOne()
         {
-            if (this.cards.Any())
-            {
-                Card cardToDeal = this.cards[0];
-                this.cards.RemoveAt(0);                     
-                return cardToDeal;
-            }
-
-            throw new Exception(); //todo: exceptions shouldn't be used for control flow
+            Card cardToDeal = this.cards[0];
+            this.cards.RemoveAt(0);                     
+            return cardToDeal;
         }
     }
 }

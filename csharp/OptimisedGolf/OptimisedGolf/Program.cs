@@ -15,10 +15,10 @@ namespace OptimisedGolf
     {
         public static void Main(string[] args)
         {
-            Player fernie = new Player("fernie");
-            Player moneyTree = new Player("money tree");
-            Player aloe = new Player("aloe");
-            Player aloeJr = new Player("aloe jr");
+            //Player fernie = new Player("fernie");
+            //Player moneyTree = new Player("money tree");
+            //Player aloe = new Player("aloe");
+            //Player aloeJr = new Player("aloe jr");
 
             //Game game = new Game(new List<Player> {fernie, moneyTree, aloe, aloeJr}, false);
 

@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "New hole";
+}
+@model Hole
+<h2>@ViewData["Title"]</h2>
+<form asp-action="StartNewHole" asp-controller="Hole">
+    <p>
+        <label asp-for="Par"></label>
+        <input type="number" id="Par" name="Par" value="" placeholder="par for this hole" />
+    </p>
+    <input type="submit" name="start new hole" />
+</form>

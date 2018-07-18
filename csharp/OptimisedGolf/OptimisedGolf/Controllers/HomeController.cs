@@ -34,12 +34,13 @@ namespace OptimisedGolf.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-
-        public IActionResult StartNewGameIPlay(int numberOfPlayers, bool isFullGame)
+        [HttpPost]
+        public IActionResult Game(Game game)
         {
-            var viewmodel = new Game(numberOfPlayers, isFullGame);
+            //var viewmodel = new Game(numberOfPlayers, isFullGame);
+            var viewmodel = new Game(game.NumberOfPlayers, game.FullGame);
 
-           return View(viewmodel);
+            return View(viewmodel);
         }
     }
 }

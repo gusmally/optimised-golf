@@ -1,13 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Golf (the card game) Home";
 }
-
+@model Game
 <div class="row">
     <div class="col-md-3">
         <h2>Start a new round</h2>
-        <ul>
-            <li>I play</li>
-            <li><a asp-area="" asp-controller="Home" asp-action="StartNewGameIPlay">StartNewGameIPlay</a></li>
-        </ul>
+        <form asp-action="Game" asp-controller="Home">
+            <p>
+                <label asp-for="NumberOfPlayers"></label>
+                <input asp-for="NumberOfPlayers" placeholder="players" type="number"/>
+            </p>
+            <p>
+                <label asp-for="FullGame"></label>
+                <input asp-for="FullGame" placeholder="full game?" type="checkbox"/>
+            </p>
+
+            <input type="submit" name="start new game"/>
+        </form>
+
+        <!--<p>How many total players?</p>
+        <input type="number" name="numberOfPlayers" />
+        <p>Is this a full game?</p>
+        <input type="checkbox" name="fullGame" />
+        <a asp-area="" asp-controller="Home" asp-action="StartNewGameIPlay">StartNewGameIPlay</a>-->
     </div>
+    <!--<input type="button" name="start new game"/>-->
 </div>
